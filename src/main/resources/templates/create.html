@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>获取对象信息</h1>
+<h2>1、通过直接访问对象的方式</h2>
+<!--/*@thymesVar id="user" type="com.example.demo.User"*/-->
+<p th:text="${user.name}"></p>
+<p th:text="${user.address}"></p>
+
+
+<h2>2、通过th:object访问对象的方式</h2>
+<div th:object="${user}">
+    <p th:text="*{name}"></p>
+    <p th:text="*{address}"></p>
+</div>
+<form th:action="@{/user/createuser}" th:object="${user}" method='post'>
+    用户名:<input type="text" name="name"><span th:if="${#fields.hasErrors('name')}">标题长度必须在2-30之间</span><br>
+    性别:<input type="text" name="sex"><br>
+    生日:<input type="text" name="date"><br>
+    地址:<input type="text" name="address"><br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

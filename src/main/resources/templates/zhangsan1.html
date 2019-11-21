@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <h2 th:text="${user.id}"></h2>
+        <h2 th:text="${user.name}"></h2>
+        <h2 th:text="${user.address}"></h2>
+        <h2 th:text="${user.sex}"></h2>
+        <h2 th:text="${#dates.format(user.date,'yyyy-MM-dd')}"></h2>
+        <a href="/demo/hello">hello</a>
+    </div>
+</div>
+</body>
+</html>
