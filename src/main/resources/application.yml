@@ -1,10 +1,10 @@
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
-security:
-  oauth2:
-    client:
-      clientId: 841f992e11bf10fc0c8f
-      clientSecret: 42df44448fdc470f7864d785eba5eacc60320cc0
-      scope: user
-      redirectUri: http://localhost:8080/callback
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 841f992e11bf10fc0c8f
+            client-secret: 42df44448fdc470f7864d785eba5eacc60320cc0
