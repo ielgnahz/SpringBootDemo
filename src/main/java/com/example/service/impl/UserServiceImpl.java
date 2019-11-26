@@ -1,17 +1,31 @@
-package com.example.service;
+package com.example.service.impl;
 
-import com.example.demo.User;
+import com.example.bean.demo.User;
+import com.example.dao.mapper.example.UserMapper;
+import com.example.service.UserService;
 import com.example.util.JDBCUtil;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class UserServiceImpl implements UserService {
+
+    @Resource
+    UserMapper userMapper;
+
+    @Override
+    @Cacheable(value = "user",key = "'id_'+#id")
+    public User findUserById(int id){
+        System.out.println("-------------------未经过缓存-------------------");
+        return userMapper.selectUserById(id);
+    }
+/*
     @Override
     @Cacheable(value = "user",key = "'id_'+#id")
     public User findUserById(int id) {
@@ -38,7 +52,7 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
-
+*/
     @Override
     public List<User> findUsersByRange(int start, int end) {
         Connection conn = JDBCUtil.getConnection();
@@ -69,6 +83,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @CachePut(value = "user",key = "'id_'+#user.getId()")
+    public Integer saveUser(User user){
+        return userMapper.saveUser(user.getName(), user.getSex(), user.getDate(), user.getAddress());
+    }
+
+
+    /*
+    @Override
+    @CachePut(value = "user",key = "'id_'+#user.getId()")
     public User saveUser(User user) {
         System.out.println("-------------------存入缓存-------------------");
         Connection conn = JDBCUtil.getConnection();
@@ -87,5 +109,12 @@ public class UserServiceImpl implements UserService {
         }
         return user;
 
+    }
+*/
+
+
+    @Override
+    public Integer saveUser() {
+        return null;
     }
 }

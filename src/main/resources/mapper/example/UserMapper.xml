@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.mapper.example.UserMapper">
+
+    <select id="selectUserById" resultType="com.example.bean.demo.User">
+        select id,username name,sex,birthday date,address from user where id = #{id}
+    </select>
+
+    <insert id="saveUser">
+        insert into user(username,sex,birthday,address) values(#{name},#{sex},#{date},#{address})
+    </insert>
+
+</mapper>

@@ -8,3 +8,11 @@ spring:
           github:
             client-id: 841f992e11bf10fc0c8f
             client-secret: 42df44448fdc470f7864d785eba5eacc60320cc0
+
+example:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    driver: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+

@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.demo.User;
+import com.example.bean.demo.User;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ public interface UserService {
 
     List<User> findUsersByRange(int start,int end);
 
-    User saveUser(User user);
+    Integer saveUser(User user);
+
+    Integer saveUser();
 
 }

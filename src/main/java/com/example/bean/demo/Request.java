@@ -1,7 +1,4 @@
-package com.example.demo;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+package com.example.bean.demo;
 
 import java.util.List;
 

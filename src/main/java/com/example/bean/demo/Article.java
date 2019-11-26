@@ -1,6 +1,4 @@
-package com.example.demo;
-
-import com.fasterxml.jackson.annotation.JsonFilter;
+package com.example.bean.demo;
 
 public class Article {
     private String id;

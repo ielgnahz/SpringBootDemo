@@ -1,7 +1,7 @@
 package com.example.controller;
 
-import com.example.demo.Request;
-import com.example.demo.User;
+import com.example.bean.demo.Request;
+import com.example.bean.demo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

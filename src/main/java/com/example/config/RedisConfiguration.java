@@ -24,14 +24,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * RedisConfig
+ * RedisConfiguration
  *
  * @author zz
  * @date 2018/5/7
  */
 //@Configuration
 //@EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
+public class RedisConfiguration extends CachingConfigurerSupport {
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory(){

@@ -1,13 +1,11 @@
 package com.example;
 
-import com.example.demo.Article;
+import com.example.bean.demo.Article;
 import com.example.util.CustomerJsonSerializer;
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 
 public class Demo {
     public static void main(String[] args) throws JsonProcessingException {

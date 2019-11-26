@@ -3,10 +3,6 @@ package com.example.config;
 import com.example.Interceptor.LoginInterceptor;
 import com.example.util.JsonReturnHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.oauth2.client.CommonOAuth2Provider;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -22,7 +18,7 @@ import java.util.List;
 ②别的带@Configuration的类不要实现WebMvcConfigurer接口，因为它是WebMvcConfigurationSupport的父接口，项目启动时会报错
  */
 //@Configuration
-public class WebMvcConfig extends WebMvcConfigurationSupport {
+public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         super.addInterceptors(registry);

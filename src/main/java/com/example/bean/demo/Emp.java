@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.bean.demo;
 
 public class Emp {
     private String name;

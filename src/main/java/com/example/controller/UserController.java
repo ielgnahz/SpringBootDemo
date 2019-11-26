@@ -1,8 +1,8 @@
 package com.example.controller;
 
 import com.example.Exception.UserNotFoundException;
-import com.example.demo.Emp;
-import com.example.demo.User;
+import com.example.bean.demo.Emp;
+import com.example.bean.demo.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -11,11 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.filter.HttpPutFormContentFilter;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -64,9 +62,9 @@ public class UserController {
         return "zhangsan1";
     }
 
-    @RequestMapping("update")
+    @PostMapping("update")
     @ResponseBody
-    public String saveUser(@RequestParam User user){
+    public String saveUser(User user){
         userService.saveUser(user);
         return "修改成功";
     }

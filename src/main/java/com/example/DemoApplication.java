@@ -2,18 +2,17 @@ package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-//import org.springframework.util.unit.DataSize;
 
 import javax.servlet.MultipartConfigElement;
 import javax.sql.DataSource;
 
-@SpringBootApplication
-@Configuration
+//import org.springframework.util.unit.DataSize;
+
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class DemoApplication {
     //OAuth2ClientAutoConfiguration
     @Bean

@@ -1,14 +1,13 @@
-package com.example.demo;
+package com.example.bean.demo;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Size;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.persistence.Entity;
 
 //@Entity
-public class User {
+public class User{
 
     private int id;
 
